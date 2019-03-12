@@ -43,7 +43,7 @@ public class ToggleButtons : MonoBehaviour {
     }
     public void SwitchActiveButton()
     {
-        if (currentSelectedIndex > listButton.Count-1)
+        if (currentSelectedIndex >= listButton.Count-1)
             currentSelectedIndex = 0;
         else
          currentSelectedIndex++;

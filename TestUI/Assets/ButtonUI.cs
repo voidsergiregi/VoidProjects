@@ -21,7 +21,10 @@ public class ButtonUI : MonoBehaviour {
         isShowing = !isShowing;
         TextButton.enabled = isShowing;
         imageButton.enabled = isShowing;
-       
+    }
+    public void ClikButton()
+    {
+
     }
    
 
