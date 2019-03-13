@@ -14,6 +14,7 @@ public class ButtonUI : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        imageButton.fillAmount = 1.0f;
     }
 
     // Update is called once per frame
