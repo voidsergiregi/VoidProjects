@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 211942854}
   - component: {fileID: 211942857}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: Button4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -387,7 +387,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 211942855}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 187746769}
+        m_MethodName: FuntionButton4
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 211942854}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &211942855
@@ -438,6 +449,7 @@ MonoBehaviour:
   TextButton: {fileID: 1698365950}
   imageButton: {fileID: 211942855}
   isShowing: 0
+  coolDown: 0
 --- !u!1 &302950234
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,7 +763,7 @@ GameObject:
   - component: {fileID: 921432846}
   - component: {fileID: 921432849}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: Button6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -814,7 +826,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 921432847}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 187746769}
+        m_MethodName: FuntionButton6
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 921432846}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &921432847
@@ -837,7 +860,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -865,6 +888,7 @@ MonoBehaviour:
   TextButton: {fileID: 815905926}
   imageButton: {fileID: 921432847}
   isShowing: 0
+  coolDown: 0
 --- !u!1 &1130115595
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,7 +964,7 @@ GameObject:
   - component: {fileID: 1314470892}
   - component: {fileID: 1314470895}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Button1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1003,7 +1027,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1314470893}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 187746769}
+        m_MethodName: FuntionButton1
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1314470892}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1314470893
@@ -1026,7 +1061,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1054,6 +1089,7 @@ MonoBehaviour:
   TextButton: {fileID: 2088495091}
   imageButton: {fileID: 1314470893}
   isShowing: 0
+  coolDown: 0
 --- !u!1 &1480836076
 GameObject:
   m_ObjectHideFlags: 0
@@ -1067,7 +1103,7 @@ GameObject:
   - component: {fileID: 1480836078}
   - component: {fileID: 1480836081}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: Button5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1130,7 +1166,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1480836079}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 187746769}
+        m_MethodName: FuntionButton5
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1480836078}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1480836079
@@ -1153,7 +1200,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1181,6 +1228,7 @@ MonoBehaviour:
   TextButton: {fileID: 1609471638}
   imageButton: {fileID: 1480836079}
   isShowing: 0
+  coolDown: 0
 --- !u!1 &1556324979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1269,7 +1317,7 @@ GameObject:
   - component: {fileID: 1603222516}
   - component: {fileID: 1603222519}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Button2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1332,7 +1380,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1603222517}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 187746769}
+        m_MethodName: FuntionButton2
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1603222516}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1603222517
@@ -1355,7 +1414,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1383,6 +1442,7 @@ MonoBehaviour:
   TextButton: {fileID: 1556324981}
   imageButton: {fileID: 1603222517}
   isShowing: 0
+  coolDown: 0
 --- !u!1 &1609471636
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,7 +1531,7 @@ GameObject:
   - component: {fileID: 1640659801}
   - component: {fileID: 1640659804}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Button3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1534,7 +1594,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1640659802}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 187746769}
+        m_MethodName: FuntionButton3
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1640659801}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1640659802
@@ -1557,7 +1628,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1585,6 +1656,7 @@ MonoBehaviour:
   TextButton: {fileID: 659591412}
   imageButton: {fileID: 1640659802}
   isShowing: 0
+  coolDown: 0
 --- !u!1 &1698365948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1760,6 +1832,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b09d97e0722300249936bc8f54f779c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textHealth: {fileID: 1724223612}
+  imageHealth: {fileID: 302950236}
+  maxHealth: 1
+  health: 0
+  oldHealth: 0
 --- !u!1 &1724223609
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FuntionsButton : MonoBehaviour {
 
@@ -13,28 +14,28 @@ public class FuntionsButton : MonoBehaviour {
 	void Update () {
 		
 	}
-    public void FuntionButton1()
+    public void FuntionButton1(Button button)
     {
-        Debug.Log("funtion of button 1 executing");
+        button.GetComponent<ButtonUI>().ClikButton();
     }
-    public void FuntionButton2()
+    public void FuntionButton2(Button button)
     {
-        Debug.Log("funtion of button 2 executing");
+        button.GetComponent<ButtonUI>().ClikButton();
     }
-    public void FuntionButton3()
+    public void FuntionButton3(Button button)
     {
-        Debug.Log("funtion of button 3 executing");
+        button.GetComponent<ButtonUI>().ClikButton();
     }
-    public void FuntionButton4()
+    public void FuntionButton4(Button button)
     {
-        Debug.Log("funtion of button 4 executing");
+        button.GetComponent<ButtonUI>().ClikButton();
     }
-    public void FuntionButton5()
+    public void FuntionButton5(Button button)
     {
-        Debug.Log("funtion of button 5 executing");
+        button.GetComponent<ButtonUI>().ClikButton();
     }
-    public void FuntionButton6()
+    public void FuntionButton6(Button button)
     {
-        Debug.Log("funtion of button 6 executing");
+        button.GetComponent<ButtonUI>().ClikButton();
     }
 }
