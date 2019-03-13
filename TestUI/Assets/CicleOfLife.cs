@@ -57,10 +57,7 @@ public class CicleOfLife : MonoBehaviour {
     }
     public void UpdateHealth()
     {
-        if (health < 0.01f)
-            textHealth.text = "0%";
-        else
-        textHealth.text = (health).ToString("#%") ;
+        textHealth.text = (health).ToString("#0%") ;
         imageHealth.fillAmount = health;
     }
     public void RegenerateHealth(float healthToAdd)
