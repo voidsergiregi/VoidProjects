@@ -39,7 +39,7 @@ public class CicleOfLife : MonoBehaviour {
 
     private void AutoRegenerateHealth()
     {
-        health += 0.2f * Time.deltaTime;
+        health += 0.01f * Time.deltaTime;
         if (health>maxHealth)
         {
             health = 1.0F;
@@ -57,6 +57,10 @@ public class CicleOfLife : MonoBehaviour {
     }
     public void UpdateHealth()
     {
+        if (health < 0.01f)
+            textHealth.text = "0%";
+        else
+        textHealth.text = (health).ToString("#%") ;
         imageHealth.fillAmount = health;
     }
     public void RegenerateHealth(float healthToAdd)
