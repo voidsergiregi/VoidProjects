@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,9 +7,9 @@ using UnityEngine.UI;
 public class CicleOfLife : MonoBehaviour {
     public Text textHealth;
     public Image imageHealth;
-    //[Range(0,1)]
+    [Range(0,1)]
     public float maxHealth=1;
-  //  [Range(0,1)]
+    [Range(0,1)]
     public float health=0;
     public float oldHealth;
 	// Use this for initialization
@@ -24,16 +25,31 @@ public class CicleOfLife : MonoBehaviour {
         {
             UpdateHealth();
         }
+        oldHealth = health;
         if (Input.GetKeyDown(KeyCode.A))
         {
-            ApplyDamage(0.5f);
+            ApplyDamage(0.1f);
         }
         if (Input.GetKeyDown(KeyCode.H))
         {
-            RegenerateHealth(0.25f);
+            RegenerateHealth(0.2f);
         }
-        oldHealth = health;
+        AutoRegenerateHealth();
 	}
+
+    private void AutoRegenerateHealth()
+    {
+        health += 0.2f * Time.deltaTime;
+        if (health>maxHealth)
+        {
+            health = 1.0F;
+        }
+        if(health<0.0F)
+        {
+            health = 0.0f;
+        }
+    }
+
     public void ApplyDamage(float damage)
     {
         if(health>0.0f)
@@ -45,7 +61,7 @@ public class CicleOfLife : MonoBehaviour {
     }
     public void RegenerateHealth(float healthToAdd)
     {
-        if(health<0.9999f)
+        if(health<1.0f)
         health += healthToAdd;
     }
     
