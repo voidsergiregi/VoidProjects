@@ -88,40 +88,25 @@ public class CicleOfHealth : MonoBehaviour
         {
             isShieldActive = true;
             imageShield.fillAmount = 1.0f;
-            StartCoroutine(HealthFade(coolDownShield));
+            StartCoroutine(CoolDown(coolDownShield));
         }
     }
     public void ResetCoolDownShield()
     {
-        if (isShieldActive && imageShield.fillAmount <= 0.01f)
+        if (isShieldActive && imageShield.fillAmount <= 0f)
         {
             isShieldActive = false;
         }
     }
     IEnumerator CoolDown(float duration)
     {
-        if (isShieldActive)
+        float currentTime = 0f;  
+        while (currentTime <= duration+0.02f)
         {
-            Debug.Log("shul");
-            float startTime = Time.time;
-            while (Time.time - startTime <= duration + 0.1F)
-            {
-                imageShield.fillAmount = (Time.time - startTime / duration);
-                yield return null;
-            }
-        }
-    }
-
-    IEnumerator HealthFade(float duration)
-    {
-              float currentTime = 0f; // the time passed 
-        while (currentTime < duration)
-        {
-            imageShield.fillAmount = Mathf.Lerp(1f, 0f, currentTime / duration); // 0f = 0% hp 1f = 100% Hp, currentTime/time  give you a number between 0 and 1  = the amount of health you want to put inside the bar.
+            imageShield.fillAmount = Mathf.Lerp(1f, 0f, currentTime / duration); 
             currentTime += Time.deltaTime;
             yield return null;
         }
-
     }
 }
     #endregion
