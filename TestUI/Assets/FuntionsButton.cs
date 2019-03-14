@@ -65,7 +65,7 @@ public class FuntionsButton : MonoBehaviour {
     private void GenericButton(Button button)
     {
        
-        button.GetComponent<ButtonUI>().ClikButton();
+        button.GetComponent<ButtonUI>().StartCoroutine(button.GetComponent<ButtonUI>().CoolDown());
         
     }
     #endregion
