@@ -14,6 +14,8 @@ public class CicleOfHealth : MonoBehaviour
     public float maxHealth = 1;
     [Range(0, 1)]
     public float health = 0;
+    [Range(0, 2)]
+    public float regenerationHealthAmount = 0.1f;
     public bool isShieldActive;
     public float coolDownShield = 1.0f;
     #endregion
@@ -50,14 +52,13 @@ public class CicleOfHealth : MonoBehaviour
             SetShieldActive();  
         }
         AutoRegenerateHealth();
-      
         ResetCoolDownShield();
     }
     #endregion
     #region HelperMethods
     private void AutoRegenerateHealth()
     {
-        health += 0.01f * Time.deltaTime;
+        health += regenerationHealthAmount * Time.deltaTime;
         if (health > maxHealth)
         {
             health = 1.0F;

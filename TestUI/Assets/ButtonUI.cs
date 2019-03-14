@@ -33,9 +33,10 @@ public class ButtonUI : MonoBehaviour
     public void ResetButtonAfterCoolDown()
     {
         cooldownReset = imageButton.fillAmount == 1.0F;
-        if (cooldownReset)
+        if (gameObject.transform.parent.GetComponent<FuntionsButton>().isCoolDown)
         {
-            GetComponent<Button>().interactable = true;
+//            gameObject.transform.parent.GetComponent<FuntionsButton>().EnableButtonsOtherButtons();
+            //GetComponent<Button>().interactable = true;
         }
     }
     public void ShowHideButton()
@@ -47,6 +48,7 @@ public class ButtonUI : MonoBehaviour
     public void ClikButton()
     {
         //TODO activateHability with states
+      
         StartCoroutine(CoolDown(durationCoolDownTime));
         Debug.Log("Start cooldown i activateHability");
     }
@@ -55,7 +57,8 @@ public class ButtonUI : MonoBehaviour
     {
         if (cooldownReset)
         {
-            GetComponent<Button>().interactable = false;
+            gameObject.transform.parent.GetComponent<FuntionsButton>().DisableButtonsOtherButtons();
+            //GetComponent<Button>().interactable = false;
             float startTime = Time.time;
             while (Time.time - startTime <= duration + 0.1F)
             {
