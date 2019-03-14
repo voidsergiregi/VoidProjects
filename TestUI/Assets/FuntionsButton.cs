@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class FuntionsButton : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
+    #region Variables
+    #endregion
+    #region Unity Methods
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -14,6 +16,8 @@ public class FuntionsButton : MonoBehaviour {
 	void Update () {
 		
 	}
+    #endregion
+    #region Helpers Methods
     public void FuntionButton1(Button button)
     {
         button.GetComponent<ButtonUI>().ClikButton();
@@ -38,4 +42,5 @@ public class FuntionsButton : MonoBehaviour {
     {
         button.GetComponent<ButtonUI>().ClikButton();
     }
+    #endregion
 }

@@ -5,21 +5,20 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ToggleButtons : MonoBehaviour {
+    #region Variables Public
     public List<Button> listButton = new List<Button>();
     public Button currentSelectedButton;
     public Button startButton;
     public SpriteState sprState;
     public EventSystem eventSystem;
     public int currentSelectedIndex;
-
-    //public SpriteState SelectionState;
-
-    // Use this for initialization
+    #endregion
+    #region Unity Methods
+        // Use this for initialization
     void Start () {
         listButton.AddRange(GetComponentsInChildren<Button>());
         currentSelectedIndex = 0;
 	}
-
     // Update is called once per frame
     void Update()
     {
@@ -32,6 +31,8 @@ public class ToggleButtons : MonoBehaviour {
             SwitchActiveButton();
         }
     }
+    #endregion
+    #region Helper Methods
     public void SwitchActiveButton(Button button)
     {
         if (button)
@@ -49,5 +50,5 @@ public class ToggleButtons : MonoBehaviour {
          currentSelectedIndex++;
         SwitchActiveButton(listButton[currentSelectedIndex]);
     }
-
+    #endregion
 }

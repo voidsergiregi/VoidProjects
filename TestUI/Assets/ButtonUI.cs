@@ -5,12 +5,16 @@ using UnityEngine.UI;
 
 public class ButtonUI : MonoBehaviour
 {
+    #region Variables Public
     public Text TextButton;
     public Image imageButton;
-    public bool isShowing;
-    public float coolDown;
+    public bool isShowingButton;
+    public float durationCoolDownTime=1f;
+    #endregion
+    #region Variables Private
     private bool cooldownReset;
-
+    #endregion
+    #region Unity Methods
     // Use this for initialization
     void Start()
     {
@@ -24,6 +28,8 @@ public class ButtonUI : MonoBehaviour
             ShowHideButton();
         ResetButtonAfterCoolDown();
     }
+    #endregion
+    #region HelperMethods
     public void ResetButtonAfterCoolDown()
     {
         cooldownReset = imageButton.fillAmount == 1.0F;
@@ -34,47 +40,19 @@ public class ButtonUI : MonoBehaviour
     }
     public void ShowHideButton()
     {
-        isShowing = !isShowing;
-        TextButton.enabled = isShowing;
-        imageButton.enabled = isShowing;
-      //  imageButton.fillAmount = 0.5f;
+        isShowingButton = !isShowingButton;
+        TextButton.enabled = isShowingButton;
+        imageButton.enabled = isShowingButton;
     }
     public void ClikButton()
     {
-        
-
-        //TODO startcooldown and activateHability with states
-        //SartCourotne(CountDown(1f);
-        StartCoroutine(WaitForSeconds(1f));
+        //TODO activateHability with states
+        StartCoroutine(CoolDown(durationCoolDownTime));
         Debug.Log("Start cooldown i activateHability");
     }
-
-    IEnumerator CountDown(float time)
+    #endregion
+    IEnumerator CoolDown(float duration)
     {
-        //countdownRunning = true;
-        StartCoroutine("CountDownAnimation", time);
-        yield return new WaitForSeconds(time);
-        Debug.Log("Ding ding ding");
-        //if (countdownRunning)
-        //do stuff
-
-        ///  countdownRunning = false;
-    }
-    IEnumerator CountDownAnimation(float time)
-    {
-        float animationTime = time;
-        while (animationTime > 0)
-        {
-            animationTime -= Time.deltaTime;
-            imageButton.fillAmount = animationTime / time;
-            yield return new WaitForSeconds(Time.deltaTime);
-        }
-
-    }
-
-    IEnumerator WaitForSeconds(float duration)
-    {
-       
         if (cooldownReset)
         {
             GetComponent<Button>().interactable = false;
@@ -84,8 +62,6 @@ public class ButtonUI : MonoBehaviour
                 imageButton.fillAmount = Time.time - startTime / duration;
                 yield return null;
             }
-            
         }        
     }
-
 }
