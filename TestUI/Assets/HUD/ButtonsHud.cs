@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 
-public class FuntionsButton : MonoBehaviour {
+public class ButtonsHud : MonoBehaviour {
     #region Variables
     public List<Button> listButtons;
     public bool isCoolDown;
@@ -17,25 +17,11 @@ public class FuntionsButton : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (Input.GetKeyDown(KeyCode.V)){
+            ShowHideButton(listButtons[1]);
+        }
 	}
-    public void DisableButtonsOtherButtons()
-    {
-        Debug.Log("ss");
-        isCoolDown = true;
-        foreach (var item in listButtons)
-        {
-            item.interactable = false;
-        }
-    }
-    public void EnableButtonsOtherButtons()
-    {
-        isCoolDown = false;
-        foreach (var item in listButtons)
-        {
-            item.interactable = true;
-        }
-    }
+    
     #endregion
     #region Helpers Methods
     public void FuntionButton1(Button button)
@@ -65,8 +51,26 @@ public class FuntionsButton : MonoBehaviour {
     private void GenericButton(Button button)
     {
         button.GetComponent<ButtonUI>().ClikButton();
-       // button.GetComponent<ButtonUI>().StartCoroutine(button.GetComponent<ButtonUI>().CoolDown());
-        
+    }
+    public void DisableButtonsOtherButtons()
+    {
+        isCoolDown = true;
+        foreach (var item in listButtons)
+        {
+            item.interactable = false;
+        }
+    }
+    public void EnableButtonsOtherButtons()
+    {
+        isCoolDown = false;
+        foreach (var item in listButtons)
+        {
+            item.interactable = true;
+        }
+    }
+    public void ShowHideButton(Button button)
+    {
+        button.GetComponent<ButtonUI>().ShowHideButton();
     }
     #endregion
 }

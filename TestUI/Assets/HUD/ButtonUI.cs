@@ -13,11 +13,13 @@ public class ButtonUI : MonoBehaviour
     #endregion
     #region Variables Private
     private bool cooldownReset;
+    private ButtonsHud buttonsHudParent;
     #endregion
     #region Unity Methods
     // Use this for initialization
     void Start()
     {
+        buttonsHudParent = gameObject.transform.parent.GetComponent<ButtonsHud>();
         imageButton.fillAmount = 1.0f;
     }
 
@@ -26,15 +28,11 @@ public class ButtonUI : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.S))
             ShowHideButton();
-        ResetButtonAfterCoolDown();
+ 
     }
     #endregion
     #region HelperMethods
-    public void ResetButtonAfterCoolDown()
-    {
-       // cooldownReset = imageButton.fillAmount == 1.0F;
-      
-    }
+   
     public void ShowHideButton()
     {
         isShowingButton = !isShowingButton;
@@ -45,21 +43,20 @@ public class ButtonUI : MonoBehaviour
     {
         //TODO activateHability with states
       
-        StartCoroutine(CoolDown(durationCoolDownTime));
+        StartCoroutine(CoolDownButton(durationCoolDownTime));
         Debug.Log("Start cooldown i activateHability");
     }
     #endregion
-    public IEnumerator CoolDown(float duration=2f)
+    public IEnumerator CoolDownButton(float duration=2f)
     {
-            gameObject.transform.parent.GetComponent<FuntionsButton>().DisableButtonsOtherButtons();
+        buttonsHudParent.DisableButtonsOtherButtons();
             float startTime = Time.time;
             while (Time.time - startTime <= duration + 0.1F)
             {
                 imageButton.fillAmount = Time.time - startTime / duration;
-                if(imageButton.fillAmount>=1.0f && gameObject.transform.parent.GetComponent<FuntionsButton>().isCoolDown)
-                gameObject.transform.parent.GetComponent<FuntionsButton>().EnableButtonsOtherButtons();
-            yield return null;
+                if(imageButton.fillAmount>=1.0f && buttonsHudParent.isCoolDown)
+                buttonsHudParent.EnableButtonsOtherButtons();
+                yield return null;
             }
-        
     }
 }

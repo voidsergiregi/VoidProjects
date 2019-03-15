@@ -1472,7 +1472,7 @@ GameObject:
   - component: {fileID: 1567652103}
   - component: {fileID: 1567652102}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: CanvasHealthHUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2254,7 +2254,7 @@ GameObject:
   - component: {fileID: 2049006457}
   - component: {fileID: 2049006456}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: CanvasButtonsHUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

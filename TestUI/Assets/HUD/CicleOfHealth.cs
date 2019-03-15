@@ -59,14 +59,8 @@ public class CicleOfHealth : MonoBehaviour
     private void AutoRegenerateHealth()
     {
         health += regenerationHealthAmount * Time.deltaTime;
-        if (health > maxHealth)
-        {
-            health = 1.0F;
-        }
-        if (health < 0.0F)
-        {
-            health = 0.0f;
-        }
+        health = Mathf.Clamp01(health);
+      
     }
     public void ApplyDamage(float damage)
     {
