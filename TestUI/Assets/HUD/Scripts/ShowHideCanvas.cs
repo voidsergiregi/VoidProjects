@@ -9,7 +9,6 @@ public class ShowHideCanvas : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Canvas = GetComponent<Canvas>();
-        mainCamera = Camera.main;
 	}
 	
 	// Update is called once per frame
