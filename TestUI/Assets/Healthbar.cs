@@ -13,8 +13,8 @@ public class Healthbar : MonoBehaviour {
     public float currentDamage;
     public bool autoRegenerateHealth;
     public float regenerationHealthAmount;
+    public float speedBarDamage;
 
-    
     void Start()
     {
         UpdateHealth();
@@ -29,7 +29,7 @@ public class Healthbar : MonoBehaviour {
         oldHealth = health;
         if (Input.GetKeyDown(KeyCode.A))
         {
-            ApplyDamage(Random.Range(0.1f,0.5f));
+            ApplyDamage(Random.Range(0.01f,0.5f));
         }
         if (Input.GetKeyDown(KeyCode.H))
         {
@@ -54,17 +54,19 @@ public class Healthbar : MonoBehaviour {
     public void ApplyDamage(float damage)
     {
         float curHealt= health;
-        if (health > 0.0f)
-        {
+        
             health -= damage;
-           StartCoroutine(CoolDownDamage(curHealt, health));
-        }
+            health = Mathf.Clamp01(health);
+            StartCoroutine(CoolDownDamage(curHealt, health));
+        
     }
     public void UpdateHealth()
     {
-        textHealth.text = (health).ToString("#0%");
-        imageHealth.fillAmount = health;
+      
+            textHealth.text = (health).ToString("#0%");
+            imageHealth.fillAmount = health;
         
+
 
     }
     public void RegenerateHealth(float healthToAdd)
@@ -78,7 +80,7 @@ public class Healthbar : MonoBehaviour {
         float fillration = 0;
         while (init >= end)
         {
-            fillration += Time.deltaTime * 0.002f;
+            fillration += Time.deltaTime * speedBarDamage;
             init-= fillration;
             imagDamage.fillAmount -= fillration;
             yield return null;
