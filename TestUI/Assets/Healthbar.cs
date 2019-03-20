@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Healthbar : MonoBehaviour {
+public class Healthbar : MonoBehaviour,ItakeDamage {
     public Image imageHealth;
     public Image imagDamage;
     public Text textHealth;
@@ -51,15 +51,8 @@ public class Healthbar : MonoBehaviour {
             }
         }
     }
-    public void ApplyDamage(float damage)
-    {
-        float curHealt= health;
-        
-            health -= damage;
-            health = Mathf.Clamp01(health);
-            StartCoroutine(CoolDownDamage(curHealt, health));
-        
-    }
+     
+    
     public void UpdateHealth()
     {
       
@@ -85,5 +78,13 @@ public class Healthbar : MonoBehaviour {
             imagDamage.fillAmount -= fillration;
             yield return null;
         }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        float curHealt = health;
+        health -= damage;
+        health = Mathf.Clamp01(health);
+        StartCoroutine(CoolDownDamage(curHealt, health));
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CicleOfHealth : MonoBehaviour
+public class CicleOfHealth : MonoBehaviour,ItakeDamage
 {
     #region Variables Public
     public Text textHealth;
@@ -102,6 +102,15 @@ public class CicleOfHealth : MonoBehaviour
             currentTime += Time.deltaTime;
             yield return null;
         }
+    }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="damage"></param>
+    public void TakeDamage(float damage)
+    {
+        if (health > 0.0f)
+            health -= damage;
     }
 }
     #endregion
