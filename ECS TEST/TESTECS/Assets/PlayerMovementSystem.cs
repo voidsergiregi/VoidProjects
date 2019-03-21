@@ -3,23 +3,21 @@ using System.Collections.Generic;
 using Unity.Entities;
 using UnityEngine;
 
-public class PlayerMovementSystem : ComponentSystem  {
-
-
-     struct Filter
+class PlayerMovementSystem : ComponentSystem
+{
+    public struct Filter
     {
         public Rigidbody rigidbody;
-        public InputComponent inputComponent;
+        public InputComponent2 InputComponent;
     }
     protected override void OnUpdate()
     {
         var deltaTime = Time.deltaTime;
         foreach (var item in GetEntities<Filter>())
         {
-            var moveVector = new Vector3(item.inputComponent.Hori, 0, item.inputComponent.Vert);
+            var moveVector = new Vector3(item.InputComponent.Hori, 0, item.InputComponent.Vert);
             var movePos = item.rigidbody.position + moveVector * 3f * deltaTime;
             item.rigidbody.MovePosition(movePos);
-
         }
     }
 }

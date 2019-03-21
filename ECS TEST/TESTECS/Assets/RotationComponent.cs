@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputComponent : MonoBehaviour {
+public class RotationComponent : MonoBehaviour {
 
-    public float Vert, Hori;
+    public Quaternion Value;
 }
